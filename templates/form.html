@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <h1>Let's play Mad Libs!</h1>
+        <form action="/story" method="POST">
+            <p>Please fill in a word for each category:</p>
+            {% for word in prompts %}
+            <div>
+                <label>{{ word }}</label>
+                <input type="text" name="{{ word }}">
+            </div>
+            {% endfor %}
+            <div>
+                <button>Create Mad Lib</button>
+            </div>
+        </form>
+{% endblock %}
